@@ -70,9 +70,9 @@ def to_mesh_msg(mesh):
 
 def to_point_msg(point):
     msg = geometry_msgs.msg.Point()
-    msg.x = point[0]
-    msg.y = point[1]
-    msg.z = point[2]
+    msg.x = float(point[0])
+    msg.y = float(point[1])
+    msg.z = float(point[2])
     return msg
 
 

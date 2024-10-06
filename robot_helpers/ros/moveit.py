@@ -41,7 +41,7 @@ class MoveItClient:
 
     def planL(self, target, velocity_scaling=0.1, acceleration_scaling=0.1):
         waypoints = [to_pose_msg(target)]
-        plan, _ = self.move_group.compute_cartesian_path(waypoints, 0.01, 0.0)
+        plan, _ = self.move_group.compute_cartesian_path(waypoints, float(0.01), bool(0.0))
         state = self.robot.get_current_state()
         return self.move_group.retime_trajectory(
             state,
